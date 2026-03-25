@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anime</title>
+        <style>
+            @keyframes Anime {
+               10% { background-size:100%; } 
+            100% {background-size:150%; } 
+            }
+            
+            div{
+                height:300px; width:300px; animation-name:Anime;animation-duration: 10s;
+                background-image:url("Anime char.png") ;
+            }
+        *{background-color:rgb(14, 103, 103);}
+        p{color:aquamarine;}
+
+        h4{color:aqua;}
+        </style>
+    </head>
+<body>
+ <div> </div>
+
+<p>This project is gonna be about anime</p>
+<h4>The anime character you are seeing right now is called <bold> Naruto Uzumaki</bold></h4>
+
+
+</body>
+
+</html>
