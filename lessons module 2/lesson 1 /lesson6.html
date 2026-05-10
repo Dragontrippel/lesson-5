@@ -51,7 +51,27 @@ p {color:#555; margin: bottom:10px;;}
 <p>Elements sit in normal flow - one after another, top to bottom.</p>
 <div class="menu-item">&#127829; Pizza - $8.99</div>
 <div class="menu-item">&#127829 Burger - $6.99</div>
-<div class="menu-item">&#127829</div>
+<div class="menu-item">&#127829 Sandwich - $5.49</div>
+
+    <h2>Relative Positioning</h2>
+    <p>The element shifts from where it normally sits. Its original space stays reserved.
+  </p>
+    <div class="compare-wrap">
+        <div class="compare-col">
+            <p>Without relative:</p>
+            <div class="menu-item">&#127829; Pizza - $8.99</div>
+            <div class="menu-item" style="background: #e85d04;color:white;">&#11088; Chef's special!</div>
+            <div class="menu-item">&#127839; Sandwich - $5.49</div>
+            </div>
+            <div class="compare-col">
+                <p>With position: relative left:40px:</p>
+                <div class="menu-item">&#127829; Pizza - $8.99</div>
+                <div class="reserved">&#8592; original space reserved</div>
+                <div class="special-badge">&#11088; Chef's special!</div>
+                <div class="menu-item">&#127839; Sandwich - $5.49</div>
+            </div>
+          </div>
+
 
 </body>
 </html>
