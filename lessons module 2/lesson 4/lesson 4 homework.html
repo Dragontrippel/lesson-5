@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Ice Cream Shop Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff4f8;
+      text-align: center;
+      color: #4a2c2a;
+    }
+    h1 {
+      color: #f0007873;
+      font-size: 36px;
+      font-weight: bold;
+      font-family: cursive;
+    }
+    h1 + p {
+      color: #8a2be2;
+      font-weight: bold;
+      background-color: #ffe3f1;
+      border-radius: 10px;
+      font-family:sans-serif;
+      font-size:larger; 
+    }
+    .shop-description::first-letter {
+      font-size: 20px;
+      color:cadetblue;
+      font-weight: bold;
+    }
+    .menu-box {
+      width: 420px;
+      background-color: white;
+      border: 3px solid #7ba0d7;
+      border-radius: 15px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    ul {
+      padding: 0;
+    }
+    ul > li {
+      list-style: none;
+      background-color: #fff0f5;
+      color: #5c2a4a;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid #ffb6c1;
+    }
+    ul > li:nth-child(3) {
+      background-color: #fff3cd;
+      color: #b85c00;
+      border: 3px solid #ffa500;
+    }
+    ul > li:hover {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+    button {
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #8a2be2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Icy's ice cream shop menu</h1>
+  <p>Welcome to icy's ice cream shop!</p>
+  <p class="shop-description">
+    We serve colourful, creamy, and delicious ice cream flavours.
+  </p>
+  <div class="menu-box">
+    <h2>Today's Ice Cream Flavours</h2>
+    <ul>
+      <li>Chocolate Delight </li>
+      <li>Strawberry Swirl</li>
+      <li>Mango Magic - Today's Special</li>
+      <li>Strudel & Pistachio mix</li>
+      <li>Smurf</li>
+    </ul>
+    <button>Order Now</button>
+  </div>
+</body>
+</html>
