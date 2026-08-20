@@ -1,61 +1,109 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
 
-        </style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<style>
+
+body { background: lightyellow; }
+
+h1, h3 { color: darkorange; }
+
+.box { background: white; color: darkorange; }
+
+</style>
     </head>
     <body>
-        <div class="containere py-4">
+        <div class="container py-4">
+            <h1 class="mb-1">MY Magic Word Lab</h1>
+            <p class="text-muted mb-4">Discover types, switch them, find and swap words, and catch sneaky errors!</p>
 
-            <h1 class="mb-1">My Playlist Sorter</h1>
-            <p class="text-muted mb-4">Sort and label your music playlist using JavaScript array methods.</p>
+            <div class="card mb-4"><div class="card-body">
+                <h3 class="card-title">What Type Is It?</h3>
+                <button class="btn btn-warning" onclick="checkTypes()">Reveal the Types!</button>
+                <div id="typeResult" class="box p-3 mt-3 rounded">Press the button to reveal the secret types!</div>
 
-
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3 class="card-title">
-                        <button class="btn btn-primary mr-2" onclick="sortAZ()">Sort A to Z</button>
-                        <button class="btn btn-primary" onclick="sortZA()">Sort Z to A</button>
-                        <div id="nameResult" class="box p-3 mt-3 rounded"></div>
-                    </h3>
-                </div>
-            </div>
-
-                        <div class="card mb-4">
-                <div class="card-body">
-                    <h3 class="card-title">Play Counts</h3>
-                        <button class="btn btn-primary mr-2" onclick="sortleast()">Least Played First</button>
-                        <button class="btn btn-primary" onclick="sortmost()">Most Played First</button>
-                        <div id="countResult" class="box p-3 mt-3 rounded"></div>
-                    
-                </div>
-            </div>
-
-                        <div class="card mb-4">
-                <div class="card-body">
-                    <h3 class="card-title">Label Every Play Count</h3>
-                        <button class="btn btn-primary mr-2" onclick="addLabel()">Add Plays Label</button>
-                        <div id="labelResult" class="box p-3 mt-3 rounded"></div>
-
-                </div>
             </div>
         </div>
 
+                    <div class="card mb-4"><div class="card-body">
+                <h3 class="card-title">Switch the Types</h3>
+                <input id="numIn" class="form-control mb-2" placeholder="ype any number here (try: 42)">
+                <button class="btn btn-warning mr-2" onclick="toStr()">Turn into Text</button>
+                <button class="btn btn-warning" onclick="toNum()">Turn into Number</button>
+                <div id="convResult" class="box p-3 mt-3 rounded">Type a number above and then press a button!</div>
+            </div>
+        </div>
+
+        <div class="card mb-4"><div class="card-body">
+            <h3 class="card-title">Find and swap a word</h3>
+            <input id="findW" class="form-control mb-2" placeholder="Word to find (try: dragon)">
+            <input id="swapW" class="form-control mb-2" placeholder="Swap it with (try: wizard)">
+
+            <button class="btn btn-warning mr-2" onclick="doSearch()">Find it!</button>
+            <button class="btn btn-warning" onclick="doReplace()">Swap it!</button>
+            <div id="srResult" class="box p-3 mt-3 rounded">Sentence: "The dragon flew over the big castle."</div>
+
+        </div></div>
+
+        <div class="card mb-4"><div class=card-body>
+            <h3 class="card-title">Catch the mistake</h3>
+            <input id="divIn" class="form-control mb-2" placeholder="Divide 100 by this - try a number or type something silly!">
+        <button class="btn btn-warning" onclick="trySafe()">Try it</button>
+        <div id="errResult" class="box p-3 mt-3 rounded">Type a number or something silly and see what happens!</div>
+        </div></div>
+        </div>
         <script>
-            var songs = ["Zoom", "Bounce", "Glow", "Rush", "spark"];  // Topic 1 & 2
-            var plays = [320, 85, 210, 50, 175];                     // Topic 3
+            var sen = "The dragon flew over the big castle";
+            function checkTypes() {
+                document.getElementById("typeResult").innerHTML = 
+                "score 42       - type " + typeof 42 + \n" +
+                "name 'Alex'    - type " + typeof "Alex" + "\n" +
+                "game over true - type " + typeof true;
+            }
+            function toStr() {
+                var v = document.getElementById("numIn").value;
+                document.getElementById("convResult").innerHTML = "String(" + ") = ''
+                String(v) + "' - now it is a:  " + typeof String(v);
+            }
+            function toNum() {
 
-            document.getElementById("nameResult").innerHTML = "Songs: " + songs;
-            document.getElementById("countResult").innerHTML = "Plays: " + plays;
-            document.getElementById("labelResult").innerHTML = "Press the button above!";
+var v = document.getElementById("numIn").value;
+document.getElementById("convResult").innerHTML = "Number('" + v + "') = " + Number(v) + " — now it is a: " + typeof Number(v);
+}
+function doSearch() {
+var w = document.getElementById("findW").value;
+var p = sen.search(w);
+document.getElementById("srResult").innerHTML = p === -1 ? "'" + w + "' is not in the sentence — try another word!" : "Found '" + w + "' hiding at position " + p + "!";
+}
 
-            function sortAZ()   {songs.sort(); document.getElementById("nameResult").innerHTML = "A to Z: " + songs; }
+function doReplace() {
+
+var w = document.getElementById("findW").value;
+
+document.getElementById("srResult").innerHTML = "New sentence: " + sen.replace(w, document.getElementById("swapW").value);
+
+}
+
+function trySafe() {
+
+try {
+
+var n = document.getElementById("divIn").value;
+
+if (n === "" || isNaN(n)) { throw "That is not a number — you caught the error!"; }
+
+document.getElementById("errResult").innerHTML = "100 / " + n + " = " + (100 / Number(n)) + " — well done!";
+
+} catch(err) { document.getElementById("errResult").innerHTML = "Error caught: " + err; }
+
+}
         </script>
-        
 
 
 
 
+     
     </body>
 </html>
