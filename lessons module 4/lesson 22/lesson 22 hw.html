@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Favourite People Profiles</title>
+  <link
+    href="https://jsdelivr.net"
+    rel="stylesheet">
+  <style>
+    body { background-color: #F0F0F2; }
+    h1   { color: #FF5A43; }
+    .card-label { font-size: 11px; color: #999; text-transform: uppercase; }
+    pre  { font-size: 13px; color: #333; }
+  </style>
+</head>
+<body class="py-4">
+
+  <div class="container">
+
+    <h1 class="mb-1">My Favourite People Profiles</h1>
+    <p class="text-muted mb-4">
+      Introduction to Arrays of Objects in JavaScript - Grade 4-6
+    </p>
+
+    <!-- Profile Card 1 -->
+    <div class="card shadow-sm mb-3 target-card" style="max-width:400px;">
+      <div class="card-body">
+        <h5 class="card-title" style="color:#FF5A43;">Profile Details</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="card-label d-block">Name</span>
+            <strong class="profile-name">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">Relationship</span>
+            <strong class="profile-relationship">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">Favourite Activity</span>
+            <strong class="profile-activity">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">City</span>
+            <strong class="profile-city">-</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Profile Card 2 -->
+    <div class="card shadow-sm mb-3 target-card" style="max-width:400px;">
+      <div class="card-body">
+        <h5 class="card-title" style="color:#FF5A43;">Profile Details</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="card-label d-block">Name</span>
+            <strong class="profile-name">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">Relationship</span>
+            <strong class="profile-relationship">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">Favourite Activity</span>
+            <strong class="profile-activity">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">City</span>
+            <strong class="profile-city">-</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Profile Card 3 -->
+    <div class="card shadow-sm mb-3 target-card" style="max-width:400px;">
+      <div class="card-body">
+        <h5 class="card-title" style="color:#FF5A43;">Profile Details</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="card-label d-block">Name</span>
+            <strong class="profile-name">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">Relationship</span>
+            <strong class="profile-relationship">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">Favourite Activity</span>
+            <strong class="profile-activity">-</strong>
+          </li>
+          <li class="list-group-item">
+            <span class="card-label d-block">City</span>
+            <strong class="profile-city">-</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Code Box -->
+    <div class="card shadow-sm" style="max-width:400px;">
+      <div class="card-body">
+        <h6 style="color:#FF5A43;">JavaScript Array Used</h6>
+        <pre id="codeDisplay" class="bg-light p-3 rounded border mb-0"></pre>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    var favouritePeople = [
+      {
+        name:         "Ananya",
+        relationship: "My Sister",
+        activity:     "Played hockey",
+        city:         "Groningen"
+      },
+      {
+        name:         "Adarsh",
+        relationship: "My Dad",
+        activity:     "Works",
+        city:         "Groningen"
+      },
+      {
+        name:         "Mukta",
+        relationship: "My Mom",
+        activity:     "Works",
+        city:         "Groningen"
+      }
+    ];
+
+
+    var cardElements = document.querySelectorAll(".target-card");
+
+
+    cardElements.forEach(function(card, index) {
+
+      var person = favouritePeople[index];
+      
+
+      if (person) {
+        card.querySelector(".profile-name").textContent = person.name;
+        card.querySelector(".profile-relationship").textContent = person.relationship;
+        card.querySelector(".profile-activity").textContent = person.activity;
+        card.querySelector(".profile-city").textContent = person.city;
+      }
+    });
+
+    var codeEl = document.getElementById("codeDisplay");
+    codeEl.textContent = JSON.stringify(favouritePeople, null, 2);
+  </script>
+
+</body>
+</html>
