@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Zoo Manager</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #1e293b;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #0f172a;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      color: #475569;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+    }
+
+    #zoo {
+      width: 460px;
+      border: 4px double #0284c7;
+      border-radius: 16px;
+      background-color: #ffffff;
+      margin: 20px auto;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(2, 132, 199, 0.06);
+    }
+
+    .zone {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      padding: 16px;
+      background-color: #f8fafc;
+      text-align: left;
+      transition: all 0.35s ease;
+    }
+    
+    .zone:last-child {
+      margin-bottom: 0;
+    }
+
+    .zone h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+      color: #0369a1;
+    }
+
+    .zone p {
+      margin: 0;
+      text-align: left;
+      color: #64748b;
+    }
+
+    .animal {
+      font-weight: 600;
+      color: #0284c7;
+    }
+
+    button {
+      background-color: #0284c7;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+      transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+      margin: 15px 0;
+    }
+
+    button:hover {
+      background-color: #0369a1;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #output {
+      width: 460px;
+      border-left: 5px solid #38bdf8;
+      border-top: 1px solid #e2e8f0;
+      border-right: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background-color: #ffffff;
+      margin: 25px auto;
+      padding: 20px;
+      text-align: left;
+      line-height: 1.7;
+      color: #334155;
+      box-sizing: border-box;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    #output strong {
+      color: #0369a1;
+    }
+
+    code {
+      background-color: #e0f2fe;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9em;
+      color: #0369a1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>My Digital Zoo Manager</h1>
+
+  <p>
+    Use JavaScript and the DOM to explore animals, zones, parent nodes,
+    child nodes, and sibling nodes.
+  </p>
+
+  <div id="zoo">
+
+    <div class="zone" id="tigerZone">
+      <h2>Tiger Enclosure</h2>
+      <p>Animal: <span class="animal">Bengal Tiger</span></p>
+    </div>
+
+    <div class="zone" id="koalaZone">
+      <h2>Koala Outpost</h2>
+      <p>Animal: <span class="animal">Koala</span></p>
+    </div>
+
+    <div class="zone" id="flamingoZone">
+      <h2>Flamingo Lagoon</h2>
+      <p>Animal: <span class="animal">Pink Flamingo</span></p>
+    </div>
+
+  </div>
+
+  <button onclick="manageZoo()">Manage Zoo</button>
+
+  <div id="output">
+    Zoo information will appear here.
+  </div>
+
+  <script>
+    function manageZoo() {
+      let zoo = document.getElementById("zoo");
+      let tigerZone = document.getElementById("tigerZone");
+      let koalaZone = document.getElementById("koalaZone");
+      let flamingoZone = document.getElementById("flamingoZone");
+      let output = document.getElementById("output");
+
+      let parentNodeName = tigerZone.parentNode.id;
+      let firstChildZone = zoo.children[0].id;
+      let secondChildZone = zoo.children[1].id;
+      let nextSiblingZone = tigerZone.nextElementSibling.id;
+      let previousSiblingZone = flamingoZone.previousElementSibling.id;
+
+      let elementNodeType = tigerZone.nodeType;
+      let textNodeType = tigerZone.firstChild.nodeType;
+
+      tigerZone.style.backgroundColor = "#e0f2fe";
+      tigerZone.style.borderColor = "#7dd3fc";
+      
+      koalaZone.style.backgroundColor = "#f0fdfa";
+      koalaZone.style.borderColor = "#99f6e4";
+      
+      flamingoZone.style.backgroundColor = "#eff6ff";
+      flamingoZone.style.borderColor = "#bfdbfe";
+
+      tigerZone.querySelector("h2").innerHTML = "Updated Tiger Enclosure 🐅";
+      koalaZone.querySelector("h2").innerHTML = "Updated Koala Outpost 🐨";
+      flamingoZone.querySelector("h2").innerHTML = "Updated Flamingo Lagoon 🦩";
+
+      output.innerHTML =
+        "<strong>DOM Tree Information:</strong><br>" +
+        "• Parent of Tiger Zone: <code>" + parentNodeName + "</code><br>" +
+        "• First child of Zoo: <code>" + firstChildZone + "</code><br>" +
+        "• Second child of Zoo: <code>" + secondChildZone + "</code><br><br>" +
+
+        "<strong>Sibling Node Information:</strong><br>" +
+        "• Next sibling of Tiger Zone: <code>" + nextSiblingZone + "</code><br>" +
+        "• Previous sibling of Flamingo Zone: <code>" + previousSiblingZone + "</code><br><br>" +
+
+        "<strong>Types of Nodes:</strong><br>" +
+        "• Tiger Zone element node type: <code>" + elementNodeType + "</code><br>" +
+        "• Tiger Zone first child text node type: <code>" + textNodeType + "</code><br><br>" +
+
+        "<strong>DOM Update:</strong><br>" +
+        "The animal zone headings, borders, and background colours were beautifully updated using JavaScript.";
+    }
+  </script>
+
+</body>
+</html>
