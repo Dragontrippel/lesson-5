@@ -25,16 +25,16 @@ h1, h3 { color: darkorange; }
                 <div id="typeResult" class="box p-3 mt-3 rounded">Press the button to reveal the secret types!</div>
 
             </div>
-        </div>
+            </div>
 
                     <div class="card mb-4"><div class="card-body">
                 <h3 class="card-title">Switch the Types</h3>
-                <input id="numIn" class="form-control mb-2" placeholder="ype any number here (try: 42)">
+                <input id="numIn" class="form-control mb-2" placeholder="Type any number here (try: 42)">
                 <button class="btn btn-warning mr-2" onclick="toStr()">Turn into Text</button>
                 <button class="btn btn-warning" onclick="toNum()">Turn into Number</button>
                 <div id="convResult" class="box p-3 mt-3 rounded">Type a number above and then press a button!</div>
             </div>
-        </div>
+
 
         <div class="card mb-4"><div class="card-body">
             <h3 class="card-title">Find and swap a word</h3>
@@ -44,8 +44,7 @@ h1, h3 { color: darkorange; }
             <button class="btn btn-warning mr-2" onclick="doSearch()">Find it!</button>
             <button class="btn btn-warning" onclick="doReplace()">Swap it!</button>
             <div id="srResult" class="box p-3 mt-3 rounded">Sentence: "The dragon flew over the big castle."</div>
-
-        </div></div>
+        </div>
 
         <div class="card mb-4"><div class=card-body>
             <h3 class="card-title">Catch the mistake</h3>
@@ -58,15 +57,17 @@ h1, h3 { color: darkorange; }
             var sen = "The dragon flew over the big castle";
             function checkTypes() {
                 document.getElementById("typeResult").innerHTML = 
-                "score 42       - type " + typeof 42 + \n" +
+                "score 42       - type " + typeof 42 + "\n" +
                 "name 'Alex'    - type " + typeof "Alex" + "\n" +
                 "game over true - type " + typeof true;
             }
-            function toStr() {
-                var v = document.getElementById("numIn").value;
-                document.getElementById("convResult").innerHTML = "String(" + ") = ''
-                String(v) + "' - now it is a:  " + typeof String(v);
-            }
+function toStr() {
+
+var v = document.getElementById("numIn").value;
+
+document.getElementById("convResult").innerHTML = "String(" + v + ") = '" + String(v) + "' — now it is a: " + typeof String(v);
+
+}
             function toNum() {
 
 var v = document.getElementById("numIn").value;
