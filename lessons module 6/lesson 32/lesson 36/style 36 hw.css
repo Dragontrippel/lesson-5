@@ -1,7 +1,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #eef1f5;
+  background-color:azure;
 }
 
 
@@ -9,9 +9,9 @@ body {
   width: 320px;
   margin: 40px auto;
   padding: 24px;
-  background-color: #ffffff;
+  background-color:aliceblue;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 12px rgba(167, 17, 57, 0.2);
 }
 
 #app-title {
@@ -36,11 +36,12 @@ body {
 }
 
 #amount {
+  
   width: 100%;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  border: 1px solid #cccccc;
+  border: 2px solid #091b92;
   border-radius: 6px;
 }
 
