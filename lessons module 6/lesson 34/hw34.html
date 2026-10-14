@@ -27,26 +27,7 @@
     <p id="note">Terms and conditions apply</p>
   </div>
 
-<script>
-    let balance = 1000;
 
-    document.getElementById("credit-btn").onclick = function() {
-        let amount = Number(document.getElementById("amount").value);
-        balance = balance + amount;
-        document.getElementById("balance").innerHTML = balance;
-    }
-
-    document.getElementById("debit-btn").onclick = function() {
-        let amount = Number(document.getElementById("amount").value);
-
-        if (amount <= balance && amount > 0) {
-            balance = balance - amount;
-            document.getElementById("balance").innerHTML = balance;
-        } else {
-            alert("Insufficient balance or invalid amount!");
-        }
-    }
-</script>
 </body>
 </html>
 
