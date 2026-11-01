@@ -86,17 +86,3 @@ button {
   border-radius: 39px;
 
 }
-/* 1. Ensure the parent box has relative positioning */
-.card-box {
-    position: relative;
-    /* your existing styles */
-}
-
-/* 2. Pin the button container to the bottom-right */
-.button-container {
-    position: absolute;
-    bottom: 16px; /* Spacing from the bottom edge */
-    right: 16px;  /* Spacing from the right edge */
-}
-
-
