@@ -1,6 +1,4 @@
-# ================================
-# MY DAILY MOOD ADVISOR
-# ================================
+# ========  
 
 # PART 1 - USER INPUT
 name = input("Enter your name: ")
